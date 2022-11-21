@@ -1,0 +1,24 @@
+#!/bin/sh
+
+read -p "Enter desired password for editor (enter for default of 'password'): " pw
+pw=${pw:-password}
+echo $pw
+
+# if [[ $# -ne 1 ]]; then
+#     echo "usage:\n./runme <password>"
+#     exit 1
+# fi
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+docker run -d -p 8787:8787 --rm -v $SCRIPT_DIR/src:/home/rstudio -e PASSWORD=$pw openstax/kinetic-enclave-development:latest
+
+
+echo "Login as:
+  username: rstudio
+  password: $pw
+
+You may close this window, rstudio will contine to run"
+
+sleep 5
+open "http://localhost:8787"
