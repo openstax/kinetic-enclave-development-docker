@@ -17,6 +17,11 @@ IMGID=$(docker run -d -p 8787:8787 --rm \
     -e PASSWORD=$pw \
     openstax/kinetic-enclave-development:latest)
 
+docker_status=$?
+if [ $success -ne 0 ]; then
+  echo "Failed to execute docker run command, is the Docker process running?"
+  exit $docker_status
+fi
 
 echo "Login as:
   username: rstudio
