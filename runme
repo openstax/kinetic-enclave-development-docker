@@ -11,18 +11,21 @@ echo $pw
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-docker run -d -p 8787:8787 --rm \
+IMGID=$(docker run -d -p 8787:8787 --rm \
     -v $SCRIPT_DIR/src:/home/rstudio \
     -v $SCRIPT_DIR/private:/private \
     -e PASSWORD=$pw \
-    openstax/kinetic-enclave-development:latest
+    openstax/kinetic-enclave-development:latest)
 
 
 echo "Login as:
   username: rstudio
   password: $pw
 
-You may close this window, rstudio will contine to run"
+You may close this window, rstudio will contine to run
+
+To stop rstudio:
+docker stop $IMGID"
 
 sleep 5
 open "http://localhost:8787"
