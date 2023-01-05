@@ -4,11 +4,6 @@ read -p "Enter desired password for editor (enter for default of 'password'): " 
 pw=${pw:-password}
 echo $pw
 
-# if [[ $# -ne 1 ]]; then
-#     echo "usage:\n./runme <password>"
-#     exit 1
-# fi
-
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 IMGID=$(docker run -d -p 8787:8787 --rm \
@@ -18,7 +13,7 @@ IMGID=$(docker run -d -p 8787:8787 --rm \
     openstax/kinetic-enclave-development:latest)
 
 docker_status=$?
-if [ $success -ne 0 ]; then
+if [ $docker_status -ne 0 ]; then
   echo "Failed to execute docker run command, is the Docker process running?"
   exit $docker_status
 fi
