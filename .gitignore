@@ -13,3 +13,4 @@ yarn-error.log*
 .eslintcache
 src/.local
 private
+build/kinetic-r-client/

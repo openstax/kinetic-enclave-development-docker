@@ -57,13 +57,12 @@ install2.r --error --skipinstalled -n "$NCPUS" \
     psych \
     careless
 
-
-
 ## dplyr database backends
 install2.r --error --skipmissing --skipinstalled -n "$NCPUS" \
     dbplyr \
     DBI \
     dtplyr \
+    devtools \
     nycflights13 \
     Lahman \
     RMariaDB \

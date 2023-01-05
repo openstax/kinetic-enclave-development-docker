@@ -9,9 +9,12 @@ ENV PATH=/usr/lib/rstudio-server/bin:$PATH
 RUN apt-get update
 RUN /rocker_scripts/install_rstudio.sh
 RUN /rocker_scripts/install_pandoc.sh
-
 COPY ./scripts /scripts
 RUN /scripts/install_misc_r_packages.sh
+
+COPY ./kinetic-r-client /kinetic-r-client
+RUN R -e "devtools::install('/kinetic-r-client')"
+RUN rm -r /kinetic-r-client
 
 EXPOSE 8787
 
