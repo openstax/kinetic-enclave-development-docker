@@ -9,7 +9,7 @@ fi
 
 VERSION=$1
 
-cp -r ../../kinetic/backend/clients/0.1.0/r ./kinetic-r-client
+cp -r ../../kinetic/backend/clients/0.1.0/r/* ./kinetic-r-client/
 
 docker buildx build \
   --push \

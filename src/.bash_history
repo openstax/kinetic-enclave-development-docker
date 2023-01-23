@@ -15,3 +15,12 @@ ls /usr/local/lib/R/library
 ls /usr/local/lib/R/
 ls /kinetic-r-client/
 ls /kinetic-r-client/R
+R example.r 
+cd src
+pwd
+ls
+cd kinetic-r-client/
+R 
+R -e "devtools::install("./")
+"
+R -e "devtools::install('./')"

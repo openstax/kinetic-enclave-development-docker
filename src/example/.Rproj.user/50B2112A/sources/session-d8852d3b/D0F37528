@@ -1,0 +1,26 @@
+{
+    "id": "D0F37528",
+    "path": "~/example/test_data_a1d462124368d8674046d1ff5460f188.csv",
+    "project_path": "test_data_a1d462124368d8674046d1ff5460f188.csv",
+    "type": "text",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1674500393233.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "0,0",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1674500411,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1674500411,
+    "read_only": false,
+    "read_only_alternatives": []
+}
